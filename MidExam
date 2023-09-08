@@ -1,0 +1,60 @@
+def FruitVeg():
+    fruit_price=float(input("Give me the price of the fruit per Kg: "))
+    fruit_weight=float(input("Give me the weight of the fruit in Kg: "))
+    print(f"Total price of the fruit is: {fruit_price*fruit_weight}")
+def Alcohol():
+    Age=int(input("Give me the age of the shopper: "))
+    if Age>=21:
+        print("The shopper can buy alcohol.")
+    else: print("The shopper can't buy alcohol.")
+def Medicine():
+    Age=int(input("Give me the age of the shopper: "))
+    MedLicense=str(input("Does the shopper have a Valid Medicine License [Yes/No]"))
+    if Age>=19 and MedLicense=="Yes":
+        print("The shopper can buy the medicine.")
+    else: print("The shopper can't buy the medicine.")
+def Coke():
+    Age=int(input("Give me the age of the shopper: "))
+    if Age<15:
+        print("The shopper can't buy coke's.")
+        return
+    NumCoke=int(input("Enter the number of cokes: "))
+    if NumCoke<=5:
+        PriceCoke=2
+    elif NumCoke<10:
+        PriceCoke=1.5
+    elif NumCoke>=10:
+        PriceCoke=1
+    else: print("Invalid Input")
+    TotalPrice=NumCoke*PriceCoke
+    if Age>60:
+        ID_Check=input("Does the shopper has a valid elder's ID or a INSEN digital card with him? \n[Yes/No]: ")
+        if ID_Check=="Yes" or "yes":
+            TotalPrice*=0.8
+    print(f"The Total price of the cokes is: ${TotalPrice}")
+    
+
+print("Welcome!")
+
+while True:
+    print("\nMenu:")
+    print("1. Calculate the total price of a fruit")
+    print("2. Determine if the shopper can buy alcohol")
+    print("3. Determine if the shopper can buy medicine")
+    print("4. Determine if the shopper can buy coke/Calculate total price")
+    print("5. Exit Program")
+    choice=int(input("\nEnter your choice: "))
+
+    if choice==1:
+        FruitVeg()
+    elif choice==2:
+        Alcohol()
+    elif choice==3:
+        Medicine
+    elif choice==4:
+        Coke()
+    elif choice==5:
+        print("\nHave a good day!")
+        break
+    else: print("Wrong Input, choose a valid option.")
+    input("\nPress enter to continue...")
